@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+var mealsArray = [
+
+    
+]
+=======
 var mealsArr = [
     {
       "name": "Quick Oatmeal Pancakes",
@@ -115,3 +121,4 @@ var mealsArr = [
   
   module.exports = mealsArr;
 
+>>>>>>> f0fb70be36dd09f9255ba7904f28dbabc055e46f
