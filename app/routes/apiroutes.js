@@ -1,10 +1,10 @@
-const db = require("./app/models/post.js");
+const db = require("mealsArr");
 
 //  function(app) {
-
+ 
     router
     .route("/")
-    .get("/api//", function(req, res) {
+    .get("/api/mealsArr/", function(req, res) {
         db.Post.findAll({})
           .then(function(dbPost) {
             res.json(dbPost);
@@ -12,4 +12,4 @@ const db = require("./app/models/post.js");
       });  
 // }
 
-module.exports = router
+module.exports = router;
