@@ -1,0 +1,27 @@
+{
+  "name": "MealMaker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McGee1993/MealMaker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/McGee1993/MealMaker/issues"
+  },
+  "homepage": "https://github.com/McGee1993/MealMaker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "path": "^0.12.7",
+    "router": "^1.3.3"
+  }
+}
