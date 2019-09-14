@@ -9,7 +9,7 @@ const db = require("./models")
 const app = express();
 db.sequelize.sync()
 
-app.get("/", (req, res) => res.send("index"));
+// app.get("/", (req, res) => res.send("index"));
 
 const PORT = process.env.PORT || 3000;
 
@@ -23,8 +23,10 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+
 const routes1 = require("./app/routes/apiroutes.js");
 const routes2 = require("./app/routes/htmlRoutes.js");
+
 // app.use(routes1)
 // app.use(routes2)
 
