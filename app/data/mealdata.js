@@ -114,4 +114,3 @@ var mealsArr = [
   ];
   
   module.exports = mealsArr;
-
