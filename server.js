@@ -3,13 +3,15 @@ const Sequelize = require("sequelize");
 const path = require("path");
 const fs = require("fs");
 const router = require("router");
+const db = require("./models")
 
 //EXPRESS CONFIGURATION
 const app = express();
+db.sequelize.sync()
 
 // app.get("/", (req, res) => res.send("index"));
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 // app.listen(PORT, console.log("Server started on port"));
 
@@ -21,8 +23,10 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-// const routes1 = require("./app/routes/apiroutes.js");
-// const routes2 = require("./app/routes/htmlRoutes.js");
+
+const routes1 = require("./app/routes/apiroutes.js");
+const routes2 = require("./app/routes/htmlRoutes.js");
+
 // app.use(routes1)
 // app.use(routes2)
 
