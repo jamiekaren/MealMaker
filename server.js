@@ -23,10 +23,10 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const routes1 = require("./app/routes/search-apiroutes.js/index.js");
+const routes1 = require("./app/routes/search-apiroutes.js");
 const routes2 = require("./app/routes/htmlRoutes.js");
-// app.use(routes1)
-// app.use(routes2)
+app.use(routes1)
+app.use(routes2)
 
 
 // db.sequelize.sync({ force: true }).then(function() {
