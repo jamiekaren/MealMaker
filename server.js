@@ -11,7 +11,7 @@ db.sequelize.sync()
 
 // app.get("/", (req, res) => res.send("index"));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // app.listen(PORT, console.log("Server started on port"));
 
@@ -24,11 +24,13 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-const routes1 = require("./app/routes/apiroutes.js");
+const routes1 = require("./app/routes/post-apiroutes.js");
 const routes2 = require("./app/routes/htmlRoutes.js");
+const routes3 = require("./app/routes/search-apiroutes.js");
 
 // app.use(routes1)
 // app.use(routes2)
+// app.use(routes3)
 
 
 // db.sequelize.sync({ force: true }).then(function() {

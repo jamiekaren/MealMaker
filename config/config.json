@@ -1,9 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": "mysql1993",
+    "password": "PASS",
     "database": "mealrecipes",
     "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql",
     "operatorsAliases": false
   },
