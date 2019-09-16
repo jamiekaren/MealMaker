@@ -5,6 +5,8 @@ const fs = require("fs");
 const router = require("router");
 const db = require("./models")
 const authRoutes = require('./app/routes/auth-routes');
+// must run the code for passport
+const passportSetup = require('./config/passport-setup');
 
 
 //EXPRESS CONFIGURATION
