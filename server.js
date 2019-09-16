@@ -4,6 +4,8 @@ const path = require("path");
 const fs = require("fs");
 const router = require("router");
 const db = require("./models")
+const authRoutes = require('./app/routes/auth-routes');
+
 
 //EXPRESS CONFIGURATION
 const app = express();
@@ -27,6 +29,9 @@ const routes1 = require("./app/routes/search-apiroutes.js");
 const routes2 = require("./app/routes/htmlRoutes.js");
 app.use(routes1)
 app.use(routes2)
+
+// auth routes
+app.use('/auth', authRoutes);
 
 
 // db.sequelize.sync({ force: true }).then(function() {
