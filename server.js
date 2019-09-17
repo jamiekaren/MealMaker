@@ -4,6 +4,10 @@ const path = require("path");
 const fs = require("fs");
 const router = require("router");
 const db = require("./models")
+const authRoutes = require('./app/routes/auth-routes');
+// must run the code for passport
+const passportSetup = require('./config/passport-setup');
+
 
 //EXPRESS CONFIGURATION
 const app = express();
@@ -23,10 +27,23 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+
+const routes1 = require("./app/routes/post-apiroutes.js");
+const routes2 = require("./app/routes/htmlRoutes.js");
+const routes3 = require("./app/routes/search-apiroutes.js");
+
+// app.use(routes1)
+// app.use(routes2)
+// app.use(routes3)
+
 const routes1 = require("./app/routes/search-apiroutes.js");
 const routes2 = require("./app/routes/htmlRoutes.js");
 app.use(routes1)
 app.use(routes2)
+
+// auth routes
+app.use('/auth', authRoutes);
+
 
 
 // db.sequelize.sync({ force: true }).then(function() {
