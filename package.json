@@ -1,8 +1,9 @@
 {
-  "name": "mealmaker",
+  "name": "MealMaker",
   "version": "1.0.0",
-  "description": "meal maker app",
+  "description": "",
   "main": "server.js",
+
   "dependencies": {
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
@@ -14,6 +15,8 @@
     "sequelize": "^5.18.4"
   },
   "devDependencies": {},
+
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -22,10 +25,23 @@
     "type": "git",
     "url": "git+https://github.com/McGee1993/MealMaker.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/McGee1993/MealMaker/issues"
   },
-  "homepage": "https://github.com/McGee1993/MealMaker#readme"
+  "homepage": "https://github.com/McGee1993/MealMaker#readme",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.7.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^2.0.0",
+    "path": "^0.12.7",
+    "pg": "^7.12.1",
+    "router": "^1.3.3",
+    "sequelize": "^5.18.4"
+  }
 }
