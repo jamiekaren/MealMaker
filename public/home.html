@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../public/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
@@ -112,6 +113,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-success" href="/auth/google">Login with Google <i
+                            class="fab fa-google"></i></button>
                     <button type="button" class="btn btn-danger">Submit</button>
                 </div>
             </div>
@@ -132,13 +135,24 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
+                            <label for="name">First Name</label>
+                            <input type="text" class="form-control" id="signUpName" aria-describedby="First Name"
+                                placeholder="Enter First Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="signUpLastName" aria-describedby="Last Name"
+                                placeholder="Enter Last Name">
+                        </div>
+                        <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp"
                                 placeholder="Enter email">
                         </div>
                         <div class="form-group">
-                            <label for="signPassword">Password</label>
-                            <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
+                            <label for="signPassword">Create Password</label>
+                            <input type="password" class="form-control" id="signUpPassword"
+                                placeholder="Create Password">
                         </div>
                     </form>
                 </div>
@@ -152,13 +166,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js"></script>
 
     <script>
-        new fullpage("#fullPage", {
-            licenseKey: 'AA64F376-945F4F0D-9278C6F1-F74A8DF8',
-            autoScrolling: true,
-            keyboardScrolling: true,
-            scrollingSpeed: 700,
-            loopBottom: true,
-            navigation: true
+
+        $.get("/api/licensekey", function (res) {
+            console.log(res);
+
+
+
+            new fullpage("#fullPage", {
+                licenseKey: res,
+                autoScrolling: true,
+                keyboardScrolling: true,
+                scrollingSpeed: 700,
+                loopBottom: true,
+                navigation: true
+            })
         })
 
         $("#login").on("click", function () {
@@ -170,6 +191,8 @@
             event.preventDefault();
             $("#modal2").modal();
         })
+
+
     </script>
 
 </body>
