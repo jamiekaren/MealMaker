@@ -26,9 +26,15 @@ app.use(express.json());
 
 
 
-// const routes1 = require("./app/routes/post-apiroutes.js");
-// const routes2 = require("./app/routes/htmlRoutes.js");
-// const routes3 = require("./app/routes/search-apiroutes.js");
+
+
+const routes1 = require("./app/routes/post-apiroutes.js");
+const routes2 = require("./app/routes/htmlRoutes.js");
+const routes3 = require("./app/routes/search-apiroutes.js");
+
+// app.use(routes1)
+// app.use(routes2)
+// app.use(routes3)
 
 
 
@@ -39,8 +45,10 @@ app.use('/auth', authRoutes);
 
 
 
+
 db.sequelize.sync({ force: true }).then(function() {
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
 });
   });
+

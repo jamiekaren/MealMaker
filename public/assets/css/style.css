@@ -1,0 +1,97 @@
+#section0,
+#section1,
+#section2,
+#section3,
+#section4,
+#section5{
+    background-size: cover;
+}
+
+#section0 {
+    background-image: url("../images/salad.png");
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+#section1 {
+    background-image: url("../images/food.png");
+    background-position: center;
+}
+
+#section2 {
+    background-image: url("../images/cut.png");
+    background-position: center;
+}
+
+#section3 {
+    background-image: url("../images/cut.png");
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#section4 {
+    background-image: url("../images/cut.png");
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#section5 {
+    background-image: url("../images/cut.png");
+    background-position: center;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: White;
+    font-family: 'Raleway', sans-serif;
+    font-size: 150px;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    color: White;
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    
+}
+
+h3 {
+    text-align: center;
+    color: White;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+}
+
+#pg2 {
+    color: White;
+    font-family: 'Raleway', sans-serif;
+    font-size: 65px;
+}
+
+.btn {
+    background: rgb(153, 14, 14);
+    
+}
+
+#recipesSearch {
+    color: rgb(7, 7, 7);
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 100px;
+}
+
+#fav{
+    color: rgb(7, 7, 7);
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 100px;
+}
+
+#fp-nav ul li a span, 
+.fp-slidesNav ul li a span {
+     background: #fff; 
+    } 
+
