@@ -5,20 +5,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
     <title>Meal Maker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../public/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
-    <form class="example" action="action_page.php">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search">Search</i></button>
-    </form>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <div id="fullPage">
+        <div class="section" id="section0">
+            <div class="row">
+                <div class="col-9">
+                    <nav class="navbar  navbar-expand-lg sticky-top navbar-dark ">
+                        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#"></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active px-lg-4">
+                                    <a class="nav-link text-uppercase text-expanded" href="" id="login">Log In</a>
+                                </li>
+                                <!-- <li class="nav-item active px-lg-4">
+                                    <a class="nav-link text-uppercase text-expanded" href="./recipes.html">Recipe
+                                        Search</a>
+                                </li>
+                                <li class="nav-item active px-lg-4">
+                                    <a class="nav-link text-uppercase text-expanded"
+                                        href="./favorites.html">Favorites</a>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </nav>
+                    <h1>Meal Maker </h1>
+                    <h2>
+                        Easy to use.
+                        <br>
+                        Great for storing your favorite recipes.
+                    </h2>
+                    <div class="text-center">
+                        <a class="btn btn-danger btn-lg" id="signUp" href="">Sign up today!</a>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+
+        <div class="section" id="section1">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-8">
+                    <h2 id="pg2"> Search user submitted recipes.
+                        <br>
+                        Submit your own.
+                        <br>
+                        Add recipes to favorites.</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section2">
+            <div class="row"></div>
+            <div class="col">
+                <div class="text-center">
+                    <iframe src="https://giphy.com/embed/l4Jz3a8jO92crUlWM" width="580" height="475" frameBorder="0"
+                        class="giphy-embed" allowFullScreen></iframe>
+                    <p><a href="https://giphy.com/gifs/meme-steak-seasoning-l4Jz3a8jO92crUlWM"></a></p>
+                </div>
+                <br>
+                <h2>Join us today!</h2>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Password">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Sign up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp"
+                                placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="signPassword">Password</label>
+                            <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js"></script>
+
+    <script>
+        new fullpage("#fullPage", {
+            licenseKey: 'AA64F376-945F4F0D-9278C6F1-F74A8DF8',
+            autoScrolling: true,
+            keyboardScrolling: true,
+            scrollingSpeed: 700,
+            loopBottom: true,
+            navigation: true
+        })
+
+        $("#login").on("click", function () {
+            event.preventDefault();
+            $("#modal1").modal();
+        })
+
+        $("#signUp").on("click", function () {
+            event.preventDefault();
+            $("#modal2").modal();
+        })
+    </script>
+
 </body>
 
 </html>
