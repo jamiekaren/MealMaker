@@ -3,19 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
     "mysql": "^2.17.1",
     "mysql2": "^1.7.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
     "path": "^0.12.7",
+    "pg": "^7.12.1",
     "router": "^1.3.3",
     "sequelize": "^5.18.4"
   },
   "devDependencies": {},
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -30,17 +32,5 @@
   "bugs": {
     "url": "https://github.com/McGee1993/MealMaker/issues"
   },
-  "homepage": "https://github.com/McGee1993/MealMaker#readme",
-  "dependencies": {
-    "connect-flash": "^0.1.1",
-    "express": "^4.17.1",
-    "mysql": "^2.17.1",
-    "mysql2": "^1.7.0",
-    "passport": "^0.4.0",
-    "passport-google-oauth20": "^2.0.0",
-    "path": "^0.12.7",
-    "pg": "^7.12.1",
-    "router": "^1.3.3",
-    "sequelize": "^5.18.4"
-  }
+  "homepage": "https://github.com/McGee1993/MealMaker#readme"
 }

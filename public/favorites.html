@@ -33,7 +33,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item active px-lg-4">
-                                    <a class="nav-link text-uppercase text-expanded" href="" id="login">Sign Out</a>
+                                    <a class="nav-link text-uppercase text-expanded" href="/auth/logout" id="login">Sign Out</a>
                                 </li>
                                 <li class="nav-item active px-lg-4">
                                     <a class="nav-link text-uppercase text-expanded" href="./recipes.html">Recipe
@@ -67,8 +67,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js"></script>
 
         <script>
+            const keys = require("../config/keys.js");
+
             new fullpage("#fullPage", {
-                licenseKey: 'AA64F376-945F4F0D-9278C6F1-F74A8DF8',
+                licenseKey: keys.fullPage.licenseKey,
                 autoScrolling: true,
                 keyboardScrolling: true,
                 scrollingSpeed: 700,

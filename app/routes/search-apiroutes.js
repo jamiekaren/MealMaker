@@ -1,4 +1,5 @@
 // Dependencies
+require("dotenv").config();
 var recipes = require('../data/mealdata.js');
 const db = require("../../models")
 // Export the function
@@ -16,4 +17,8 @@ module.exports = function (app) {
         }
     })
     mealsArr.push(req.body);
+
+    app.get('/api/licensekey', function(req,res) {
+        res.send(process.env.fullPageLicenseKey);
+    })
 };
