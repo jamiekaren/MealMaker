@@ -6,14 +6,13 @@ const router = require("router");
 const db = require("./models")
 const authRoutes = require('./app/routes/auth-routes');
 // must run the code for passport
-const passportSetup = require('./config/passport-setup');
-const routes = require('./app/routes');
+// const passportSetup = require('./config/passport-setup');
 
 //EXPRESS CONFIGURATION
 const app = express();
 // db.sequelize.sync()
 
-app.get("/", (req, res) => res.send("home")); //Check to see if this should be home
+// app.get("/", (req, res) => res.send("home")); //Check to see if this should be home
 
 const PORT = process.env.PORT || 8080;
 
@@ -22,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-// app.use(express.static("public"));//Check to see if we need this folder in place of the home file. 
+app.use(express.static("public"));//Check to see if we need this folder in place of the home file. 
 
 
 
@@ -42,11 +41,11 @@ require("./app/routes/search-apiroutes.js")(app);
 
 // const routes1 = require("./app/routes/search-apiroutes.js");
 // const routes2 = require("./app/routes/htmlRoutes.js");
-app.use(routes1)
-app.use(routes2)
-app.use(routes3)
+// app.use(routes1)
+// app.use(routes2)
+// app.use(routes3)
 
-app.use('/routes', routes);
+// app.use('/routes', routes);
 // auth routes
 app.use('/auth', authRoutes);
 

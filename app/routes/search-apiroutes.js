@@ -1,6 +1,5 @@
 // Dependencies
 require("dotenv").config();
-var recipes = require('../data/mealdata.js');
 // Export the function
 
 const db = require("../../models")
