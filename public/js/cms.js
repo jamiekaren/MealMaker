@@ -12,7 +12,7 @@ $(document).ready(function() {
       getPostData(postId);
     }
   
-    // Getting jQuery references to the post body, title, form, and category select
+    // Getting jQuery references to the post ingredients, title, instructions, and url
     var bodyInput = $("#ingredients");
     var titleInput = $("#title");
     var instructionsInput = $("#instructions")
