@@ -1,16 +1,16 @@
-const db = require("../../models/post.js")
-const router = require("router");
-module.exports = function (app) {
+// const db = require("../../models/post.js")
+// const router = require("router");
+// module.exports = function (app) {
 
-  // router
-  // .route("/")
-  app.get("/api/posts", function (req, res) {
-    db.Post.findAll({})
-      .then(function (dbPost) {
-        res.json(dbPost);
-      });
-  });
-}
+//   // router
+//   // .route("/")
+//   app.get("/api/posts", function (req, res) {
+//     db.Post.findAll({})
+//       .then(function (dbPost) {
+//         res.json(dbPost);
+//       });
+//   });
+// }
 //   //Get route
 //   app.get("/api/posts/name", function (req, res) {
 //     db.Post.findAll({
