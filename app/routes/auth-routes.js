@@ -1,44 +1,50 @@
 const router = require('express').Router();
-const passport = require('passport');
+const passport = require('../../config/passport-setup');
+//require our user passport model
+const db = require("../../models/user-model");
 
 
-// auth login
-router.get('/login', (req, res) => {
-    res.render("login");
+//Using passport.authenticate middleware with our local strategy
+//If the user has valid login, send them to the users page
+//OTherwise the user will be sent an error
+router.post("/login", passport.authenticate("local"), (req, res) => {
+    // we're sending the user back the route to the members page because the redirect will happen there
+    res.json("/users");
 });
 
 
-// auth logout
-router.get('/logout', (req, res) => {
-    // handle with passport
-    res.send("Logging out");
+
+//route for signing up a user
+//password is automatically hashed and store securely
+//This uses our Sequelize User Model
+router.post("/register", (req, res) => {
+    console.log(req.body);
+});
+
+//route for logging out a user
+router.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+});
+
+// Route for getting some data about our user to be used client side??
+app.get("/user_data", function (req, res) {
+    if (!req.user) {
+        // The user is not logged in, send back an empty object
+        res.json({});
+    }
+    else {
+        // Otherwise send back the user's email and id
+        // Sending back a password, even a hashed password, isn't a good idea
+        res.json({
+            email: req.user.email,
+            id: req.user.id
+        });
+    }
 });
 
 
-// // auth with google, 1st paramter starts strategy, 2nd paramter is "scope"
-// router.get('/google', passport.authenticate('google', {
-//     scope: ['profile']
-// }));
 
-// // callback route for google to redirect to after authorizing with API/Profile, 
-// // created this CB redirect URI in API dev console
-// // Google gives us a special code for our user, which we can use to get profile info
-
-// // add our passport "middleware" to fire before, now that we have our code
-// router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-//     res.send('you reached the callback uri ');
-// });
-
-
-// our local username and password routes
-// let's set a flash message if it fails to let the user know (but we need req.flash() ??)
-router.post('/login',
-    passport.authenticate('local', { failureRedirect: '/login/local' }),
-    (req, res) => {
-        //'req.user' contains the authenticated user
-        console.log(req.user);
-        // res.redirect('/users/' + req.user.username);
-    });
 
 
 
