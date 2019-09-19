@@ -1,3 +1,7 @@
+// Dependencies
+require("dotenv").config();
+// Export the function
+
 const db = require("../../models")
 
 // // Exported function
@@ -10,6 +14,10 @@ const db = require("../../models")
           res.json(dbPost);
         });
     });
+
+    app.get('/api/licensekey', function(req,res) {
+        res.send(process.env.fullPageLicenseKey);
+    })
 
    // Get route for returning posts of a specific category
     // app.get("/api/posts/category/:category", function(req, res) {

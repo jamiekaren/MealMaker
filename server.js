@@ -13,7 +13,7 @@ const db = require("./models")
 const app = express();
 // db.sequelize.sync()
 
-app.get("/", (req, res) => res.send("home")); //Check to see if this should be home
+// app.get("/", (req, res) => res.send("home")); //Check to see if this should be home
 
 const PORT = process.env.PORT || 8080;
 
@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-// app.use(express.static("public"));//Check to see if we need this folder in place of the home file. 
+app.use(express.static("public"));//Check to see if we need this folder in place of the home file. 
 
 
 // const routes1 = require("./app/routes/post-apiroutes.js")(app);
@@ -37,7 +37,14 @@ require("./app/routes/htmlRoutes.js")(app);
 require("./app/routes/search-apiroutes.js")(app);
 
 
-//app.use('/routes', routes);
+
+// const routes1 = require("./app/routes/search-apiroutes.js");
+// const routes2 = require("./app/routes/htmlRoutes.js");
+// app.use(routes1)
+// app.use(routes2)
+// app.use(routes3)
+
+// app.use('/routes', routes);
 // auth routes
 //app.use('/auth', authRoutes);
 
