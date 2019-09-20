@@ -11,18 +11,19 @@ passport.use(new LocalStrategy(
     {
         usernameField: "email"
     },
-   function (email, password, done) {
-        // when user tries to log in, run code
+    function(email, password, done) {
+        // When a user tries to sign in this code runs
         db.User.findOne({
-            where: {
-                email:email
-            }
-        }).then(function (dbUser) {
-            if (!dbUser){
-                return done(null, false, {
-                    message: "Incorrect email."
-                });
-            }
+          where: {
+            email: email
+          }
+        }).then(function(dbUser) {
+          // If there's no user with the given email
+          if (!dbUser) {
+            return done(null, false, {
+              message: "Incorrect email."
+            });
+          }
             // if there is a user with email but password is wrong
             else if (!dbUser.validPassword(password)){
                 return done (null, false, {
