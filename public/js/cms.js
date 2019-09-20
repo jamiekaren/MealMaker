@@ -13,10 +13,10 @@ $(document).ready(function() {
     }
   
     // Getting jQuery references to the post ingredients, title, instructions, and url
-    var bodyInput = $("#ingredients");
     var titleInput = $("#title");
-    var instructionsInput = $("#instructions")
-    var urlInput = $("#url")
+    var urlInput = $("#url");
+    var bodyInput = $("#ingredients");
+    var instructionsInput = $("#instructions");
     var cmsForm = $("#cms");
  
     // Adding an event listener for when the form is submitted
