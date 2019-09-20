@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meal Maker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="fullPage">
+        <div class="section" id="section3">
+            <div class="row">
+                <div class="col">
+                    <nav class="navbar  navbar-expand-lg sticky-top navbar-light ">
+                        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#"></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item active px-lg-4">
+                                    <a class="nav-link text-uppercase text-expanded" href="/auth/logout" id="login">Sign Out</a>
+                                </li>
+                                <!-- <li class="nav-item active px-lg-4">
+                                    <a class="nav-link text-uppercase text-expanded" href="./recipes.html">Recipe
+                                        Search</a>
+                                </li> -->
+                                <!-- <li class="nav-item active px-lg-4">
+                                    <a class="nav-link text-uppercase text-expanded"
+                                        href="./favorites.html">Favorites</a>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </nav>
+                    <h4 id="newUserHeader">Sign-Up Below</h4>
+
+                    <form id="sign-up">
+                        <!-- <div class="form-group">
+                            <label for="name">First Name</label>
+                            <input type="text" class="form-control" id="signUpName" aria-describedby="First Name"
+                                placeholder="Enter First Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="signUpLastName" aria-describedby="Last Name"
+                                placeholder="Enter Last Name">
+                        </div> -->
+                        <div class="form-group">
+                            <label for="signUpInputEmail">Email address</label>
+                            <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp"
+                                placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpPassword">Create Password</label>
+                            <input type="password" class="form-control" id="signUpPassword"
+                                placeholder="Create Password">
+                        </div>
+                        <button type="button" class="btn btn-danger">Submit</button>
+                    </form>
+
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js"></script>
+
+    <script>
+      
+        $.get("/api/licensekey", function(res) {
+            console.log(res);
+           
+
+            new fullpage("#fullPage", {
+                licenseKey: res,
+                autoScrolling: true,
+                keyboardScrolling: true,
+                scrollingSpeed: 700,
+            });
+        })
+
+    </script>
+</body>
+
+</html>
