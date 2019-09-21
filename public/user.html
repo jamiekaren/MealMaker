@@ -165,10 +165,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js"></script>
 
-    <!-- <script>
+    <script>
 
-        $.get("/api/licensekey", function (res) {
-            console.log(res);
+        $.app.get('/api/licensekey', function (req, res) {
+            res.send(process.env.fullPageLicenseKey);
 
 
 
@@ -180,22 +180,22 @@
                 loopBottom: true,
                 navigation: true
             })
-        })
+        });
 
-        $("#login").on("click", function () {
-            event.preventDefault();
-            $("#modal1").modal();
-        })
+        // $("#login").on("click", function () {
+        //     event.preventDefault();
+        //     $("#modal1").modal();
+        // })
 
-        $("#signUp").on("click", function () {
-            event.preventDefault();
-            $("#modal2").modal();
-        })
+        // $("#signUp").on("click", function () {
+        //     event.preventDefault();
+        //     $("#modal2").modal();
+        // })
 
 
-    </script> -->
+    </script>
 
-<script type="text/javascript" src="/public/js/users.js"></script>
+    <script type="text/javascript" src="/public/js/users.js"></script>
 
 </body>
 

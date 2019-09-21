@@ -34,7 +34,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active px-lg-4">
-                                    <a class="nav-link text-uppercase text-expanded" href="" id="login">Log In</a>
+                                    <a class="nav-link text-uppercase text-expanded" href="/login" id="login">Log In</a>
                                 </li>
                                 <!-- <li class="nav-item active px-lg-4">
                                     <a class="nav-link text-uppercase text-expanded" href="./recipes.html">Recipe
@@ -43,7 +43,7 @@
                                 <li class="nav-item active px-lg-4">
                                     <a class="nav-link text-uppercase text-expanded"
                                         href="./favorites.html">Favorites</a> -->
-                                </li>
+                                <!-- </li> -->
                             </ul>
                         </div>
                     </nav>
@@ -167,10 +167,8 @@
 
     <script>
 
-        $.get("/api/licensekey", function (res) {
-            console.log(res);
-
-
+        $.app.get('/api/licensekey', function (req, res) {
+            res.send(process.env.fullPageLicenseKey);
 
             new fullpage("#fullPage", {
                 licenseKey: res,
@@ -179,18 +177,18 @@
                 scrollingSpeed: 700,
                 loopBottom: true,
                 navigation: true
-            })
-        })
+            });
+        });
 
-        $("#login").on("click", function () {
-            event.preventDefault();
-            $("#modal1").modal();
-        })
+        // $("#login").on("click", function () {
+        //     event.preventDefault();
+        //     $("#modal1").modal();
+        // })
 
-        $("#signUp").on("click", function () {
-            event.preventDefault();
-            $("#modal2").modal();
-        })
+        // $("#signUp").on("click", function () {
+        //     event.preventDefault();
+        //     $("#modal2").modal();
+        // })
 
 
     </script>

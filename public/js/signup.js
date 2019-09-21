@@ -20,13 +20,14 @@ $(document).ready(() => {
             email: emailInput.val().trim(),
             password: passwordInput.val().trim()
         };
+        console.log(userData);
 
         //check if false
         if (!userData.email || !userData.password) {
             return;
         }
 
-        // if we have both, run signup function, this is all the same as login
+        // if we have both, run signup function and empty values, this is all the same as login
         signUpUser(userData.email, userData.password);
         emailInput.val("");
         passwordInput.val("");

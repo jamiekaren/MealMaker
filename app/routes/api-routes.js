@@ -25,4 +25,10 @@ module.exports = (app) => {
             res.json(err);
         });
     });
+
+    app.get('/api/licensekey', function(req,res) {
+        res.send(process.env.fullPageLicenseKey);
+    });
+
+
 };
