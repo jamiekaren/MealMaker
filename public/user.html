@@ -36,14 +36,14 @@
                                 <li class="nav-item active px-lg-4">
                                     <a class="nav-link text-uppercase text-expanded" href="" id="login">Log In</a>
                                 </li>
-                                <!-- <li class="nav-item active px-lg-4">
+                                <li class="nav-item active px-lg-4">
                                     <a class="nav-link text-uppercase text-expanded" href="./recipes.html">Recipe
                                         Search</a>
                                 </li>
                                 <li class="nav-item active px-lg-4">
                                     <a class="nav-link text-uppercase text-expanded"
                                         href="./favorites.html">Favorites</a>
-                                </li> -->
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -87,7 +87,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <!-- <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -119,9 +119,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <!-- <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -161,16 +161,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js"></script>
 
     <script>
 
-        $.get("/api/licensekey", function (res) {
-            console.log(res);
-
-
+        $.app.get('/api/licensekey', function (req, res) {
+            res.send(process.env.fullPageLicenseKey);
 
             new fullpage("#fullPage", {
                 licenseKey: res,
@@ -180,20 +178,22 @@
                 loopBottom: true,
                 navigation: true
             })
-        })
+        });
 
-        $("#login").on("click", function () {
-            event.preventDefault();
-            $("#modal1").modal();
-        })
+        // $("#login").on("click", function () {
+        //     event.preventDefault();
+        //     $("#modal1").modal();
+        // })
 
-        $("#signUp").on("click", function () {
-            event.preventDefault();
-            $("#modal2").modal();
-        })
+        // $("#signUp").on("click", function () {
+        //     event.preventDefault();
+        //     $("#modal2").modal();
+        // })
 
 
     </script>
+
+    <script type="text/javascript" src="/public/js/users.js"></script>
 
 </body>
 

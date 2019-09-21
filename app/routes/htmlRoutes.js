@@ -11,11 +11,15 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../../public/home.html"));
     });
 
+    app.get("/register", function (req, res) {
+        res.sendFile(path.join(__dirname, "../../public/register.html"));
+    });
+
     app.get("/login", function (req, res) {
         if (req.user) {
-            res.redirect("/users");
+            rres.sendFile(path.join(__dirname, "../../public/users.html"));
         }
-        res.sendFile(path.join(__dirname, "../../public/home.html"));
+        res.sendFile(path.join(__dirname, "../../public/login.html"));
     });
 
     app.get("/favorites", function (req, res) {
@@ -26,9 +30,9 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../../public/recipes.html"));
     });
 
-    app.get("/users", isAuthenticated, function (req,res){
+    app.get("/users", isAuthenticated, function (req, res) {
         res.sendFile(path.join(__dirname, "../../public/users.html"));
-    })  
+    })
 
 
 
