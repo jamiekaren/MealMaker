@@ -170,8 +170,6 @@
         $.app.get('/api/licensekey', function (req, res) {
             res.send(process.env.fullPageLicenseKey);
 
-
-
             new fullpage("#fullPage", {
                 licenseKey: res,
                 autoScrolling: true,

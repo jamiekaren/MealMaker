@@ -7,8 +7,8 @@ $(document).ready(() => {
 
     // get our forms and inputs and store as variables to use below
     const signUpForm = $("form.signup");
-    const emailInput = $("input#signUpEmail");
-    const passwordInput = $("input#signUpPassword");
+    const emailInput = $("input#email-input");
+    const passwordInput = $("input#password-input");
 
     // when signup button is clicked, validate
 
