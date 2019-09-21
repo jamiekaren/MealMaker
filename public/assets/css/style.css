@@ -42,6 +42,13 @@
     text-align: center;
 }
 
+#addpage {
+    background-image: url("../images/cut.png");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+ } 
+
 h1 {
     text-align: center;
     color: White;
