@@ -6,7 +6,7 @@ module.exports = (app) => {
 
 
     app.post("/api/login", passport.authenticate("local"), (req, res) => {
-        res.json("/users");
+        res.sendFile(path.join(__dirname, "../../public/user.html"));
     });
 
     app.post("/api/signup", function (req, res) {
@@ -15,10 +15,10 @@ module.exports = (app) => {
         // should create a new user in our database Users (imported from models)
         db.User.create({
             email: req.body.email,
-            password: req.body.passport
+            password: req.body.password
         }).then(() => {
             //redirect to our login page
-            res.redirect(307, "/api/login");
+            res.redirect(307, "/login");
         }).catch((err) => {
             console.log(err);
             res.json(err);
