@@ -168,7 +168,7 @@
     <script>
 
         $.get("/api/licensekey", function (res) {
-            console.log(res);
+            res.send(process.env.fullPageLicenseKey);
 
 
 
