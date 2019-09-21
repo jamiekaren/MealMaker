@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
 
 </head>
 
@@ -33,7 +34,8 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item active px-lg-4">
-                                    <a class="nav-link text-uppercase text-expanded" href="/auth/logout" id="login">Sign Out</a>
+                                    <a class="nav-link text-uppercase text-expanded" href="/api/logout" id="logout">Sign
+                                        Out</a>
                                 </li>
                                 <!-- <li class="nav-item active px-lg-4">
                                     <a class="nav-link text-uppercase text-expanded" href="./recipes.html">Recipe
@@ -48,7 +50,7 @@
                     </nav>
                     <h4 id="newUserHeader">Sign-Up Below</h4>
 
-                    <form id="sign-up">
+                    <form class="signup">
                         <!-- <div class="form-group">
                             <label for="name">First Name</label>
                             <input type="text" class="form-control" id="signUpName" aria-describedby="First Name"
@@ -72,7 +74,7 @@
                         <button type="button" class="btn btn-danger">Submit</button>
                     </form>
 
-                    
+
                 </div>
 
             </div>
@@ -81,10 +83,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js"></script>
 
     <script>
-      
-        $.get("/api/licensekey", function(res) {
+
+        $.get("/api/licensekey", function (res) {
             console.log(res);
-           
+
 
             new fullpage("#fullPage", {
                 licenseKey: res,
@@ -95,6 +97,9 @@
         })
 
     </script>
+
+<script type="text/javascript" src="/public/js/signup.js"></script>
+
 </body>
 
 </html>

@@ -6,9 +6,9 @@ console.log("signup js loading!");
 $(document).ready(() => {
 
     // get our forms and inputs and store as variables to use below
-    const signUpForm = $("#form-signup");
-    const emailInput = $("#signUpEmail");
-    const passwordInput = $("#signUpPassword");
+    const signUpForm = $("form.signup");
+    const emailInput = $("input#signUpEmail");
+    const passwordInput = $("input#signUpPassword");
 
     // when signup button is clicked, validate
 
