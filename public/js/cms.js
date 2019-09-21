@@ -49,7 +49,7 @@ $(document).ready(function() {
   
     // Submits a new post and brings user to favorites page upon completion
     function submitPost(Post) {
-      $.post("/api/posts/", Post, function() {
+      $.post("./api/posts/", Post, function() {
         window.location.href = "/favorites";
       });
     }
